@@ -41,7 +41,7 @@
 
 /* ----------- INCLUDES ----------- */
 
-#include <sys/freebsdnuma.h>
+#include <sys/numa.h>
 
 
 /* ---------- DEFINITIONS --------- */
