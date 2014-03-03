@@ -41,7 +41,6 @@
 
 /* ----------- INCLUDES ----------- */
 
-#include <sys/param.h>
 #include <sys/freebsdnuma.h>
 
 
@@ -70,8 +69,7 @@
  *      allocation policy of the specified object and stores the value in policy
  */
 int
-cpuset_get_memory_affinity(cpulevel_t level, cpuwhich_t which, id_t id,
-    size_t setsize, cpuset_t *mask, int *policy)
+cpuset_get_memory_affinity(struct cputset_get_memory_affinity_args *uap)
 {
 
 	return (0);
@@ -93,8 +91,7 @@ cpuset_get_memory_affinity(cpulevel_t level, cpuwhich_t which, id_t id,
  *      specified by level,which and id to the value stored in mask and policy.
  */
 int
-cpuset_set_memory_affinity(cpulevel_t level, cpuwhich_t which, id_t id,
-    size_t setsize, const cpuset_t *mask, int policy)
+cpuset_set_memory_affinity(struct cputset_set_memory_affinity_args *uap)
 {
 
 	return (0);
@@ -116,8 +113,7 @@ cpuset_set_memory_affinity(cpulevel_t level, cpuwhich_t which, id_t id,
  * Summary: Used to move specific pages on specified nodes to new NUMA nodes.
  */
 int
-move_pages(pid_t pid, unsigned long count, void **pages, const int *node,
-    int *status, int move_flag)
+move_pages(struct move_ages_args *uap)
 {
 
 	return (0);
@@ -135,8 +131,7 @@ move_pages(pid_t pid, unsigned long count, void **pages, const int *node,
  *      specified new NUMA nodes.
  */
 int
-migrate_pages(int pid, unsigned long maxnode, const unsigned long *old_nodes,
-    const unsigned long *new_nodes)
+migrate_pages(struct migrate_pages_args *uap)
 {
 
 	return (0);
@@ -153,7 +148,7 @@ migrate_pages(int pid, unsigned long maxnode, const unsigned long *old_nodes,
  *      useful in assigning memory affinity and policies. 
  */
 size_t
-get_numa_cpus(cpuset_t *buff, size_t length)
+get_numa_cpus(struct get_numa_cpus_args *uap)
 {
 
 	return (0);
@@ -172,7 +167,7 @@ get_numa_cpus(cpuset_t *buff, size_t length)
  *      buff[a][b] where a and b are memory node IDs.
  */
 size_t
-get_numa_weights(short *buff, size_t length)
+get_numa_weights(struct get_numa_weights_args *uap)
 {
 
 	return (0);
